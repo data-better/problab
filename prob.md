@@ -16,7 +16,7 @@ library(magrittr)
 ### (1) 주사위 눈금별 상대도수에 대한 히스토그램
 
 ```{r}
-RDice=function(nn){sample(1:6, nn, replace=TRUE) %>% table()/nn}
+RDice = function(nn)  { return (tabulate(factor(sample(1:6, nn, replace=TRUE), levels = 1:6)) / nn) }
 ```
 
 ```{r}
@@ -43,7 +43,7 @@ ggplot(data = dice_result, aes(x = num, y = dice)) +
  geom_bar(stat = "identity", alpha = 0.8) +
  xlab("\n Result on Die") + ylab("Relative Frequency\n") +
  geom_hline(yintercept = 1/6, colour=2, lty=2) +
- ylim(0,0.3) + facet_wrap(~nn, ncol = 2)
+ ylim(0,0.5) + facet_wrap(~nn, ncol = 2)
 ```
 
 ## 제 2 장
