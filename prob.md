@@ -16,7 +16,7 @@ library(magrittr)
 ### (1) 주사위 눈금별 상대도수에 대한 히스토그램
 
 ```{r}
-RDice = function(nn)  { return (tabulate(factor(sample(1:6, nn, replace=TRUE), levels = 1:6)) / nn) }
+RDice = function(nn)  { return (table(factor(sample(1:6, nn, replace=TRUE), levels = 1:6)) / nn) }
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ set.seed(1234567)
 dice_1 = RDice(12) 
 dice_2 = RDice(120)
 dice_3 = RDice(1200)
-dice_4 = RDice(120000)
+dice_4 = RDice(12000)
 ```
 
 ```{r}
